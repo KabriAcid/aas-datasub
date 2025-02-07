@@ -5,10 +5,18 @@ require __DIR__ . '/../../../config/config.php';
 if(isset($_POST['register'])){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, password) VALUES (?, ?, ?)");
-    $stmt->bind_param('sss', $first_name, $last_name, $password);
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
+
+    if($result->num_rows > 0){
+        echo "Email already taken";
+    }
+
+    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param('ssss', $first_name, $last_name, $email, $password);
 
     if($stmt->execute()){
         header("Location: login.php");
@@ -19,15 +27,22 @@ if(isset($_POST['register'])){
 }
 
 if (isset($_POST['login'])) {
-    $first_name = $_POST['first_name'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
+    
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
 
-    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, password) VALUES (?, ?, ?)");
-    $stmt->bind_param('sss', $first_name, $last_name, $password);
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $db_password = $row['password'];
 
-    if ($stmt->execute()) {
-        header("Location: login.php");
+        if($password == $db_password){
+            header("Location: dashboard.php");
+        } else {
+            echo "<script>alert('Incorrect details')";
+        }
     } else {
-        echo "Failed";
+        echo "Email dosen't exist";
     }
 }

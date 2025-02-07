@@ -20,6 +20,11 @@ require __DIR__ . '/../../partials/header.php';
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
                         <input type="password   " name="password" placeholder="Password" class="form-control">
                     </div>
                 </div>

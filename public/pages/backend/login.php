@@ -10,7 +10,7 @@ require __DIR__ . '/../../partials/header.php';
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" name="first_name" placeholder="First Name" class="form-control">
+                        <input type="text" name="email" placeholder="Email Address" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-12">
