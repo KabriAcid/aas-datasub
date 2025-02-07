@@ -1,5 +1,5 @@
 <?php
-$title = "Login";
+$title = "Register";
 require __DIR__ . '/../../partials/header.php';
 ?>
 
@@ -15,14 +15,19 @@ require __DIR__ . '/../../partials/header.php';
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="password" name="password" placeholder="Password" class="form-control">
+                        <input type="text" name="last_name" placeholder="Last Name" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-success" name="login">Submit</button>
+                    <div class="form-group">
+                        <input type="password   " name="password" placeholder="Password" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success" name="register">Submit</button>
                 </div>
                 <div class="mt-3">
-                    <p>Don't have an account? <a href="register.php">Register</a></p>
+                    <p>Already have an account? <a href="login.php">Login</a></p>
                 </div>
             </div>
         </form>
