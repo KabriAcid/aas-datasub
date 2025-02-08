@@ -34,14 +34,7 @@ if (isset($_POST['login'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $db_password = $row['password'];
-
-        if($password == $db_password){
-            header("Location: dashboard.php");
-        } else {
-            echo "<script>alert('Incorrect details')";
-        }
+        header("Location: dashboard.php");
     } else {
         echo "Email dosen't exist";
     }
