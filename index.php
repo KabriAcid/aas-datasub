@@ -10,9 +10,9 @@ require __DIR__ . '/config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AAS Data Sub - Home</title>
     <link rel="stylesheet" href="public/assets/css/style.css">
-    <link rel="stylesheet" href="public/assets/css/style.css">
+    <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
 </head>
 
 <body>
-
+<?php require __DIR__ . '/public/partials/navbar.php'?>
 </body>

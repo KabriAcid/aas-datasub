@@ -37,6 +37,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'plasticbrain/php-flash-messages' => array(
+            'pretty_version' => 'v1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => 'b565762619342057ce561de20d0f2f6e14f9aa77',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../plasticbrain/php-flash-messages',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/polyfill-ctype' => array(
             'pretty_version' => 'v1.31.0',
             'version' => '1.31.0.0',

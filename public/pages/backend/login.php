@@ -4,27 +4,31 @@ require __DIR__ . '/../../partials/header.php';
 ?>
 
 <body>
-    <?php require __DIR__ . '/../../partials/navbar.php'; ?>
+    <?php #require __DIR__ . '/../../partials/navbar.php'; 
+    ?>
     <main class="container">
-        <form action="process.php" method="post" class="shadow p-5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="text" name="email" placeholder="Email Address" class="form-control">
+        <div class="row">
+            <div class="col-md-8 mx-auto mt-4 shadow-md border-0">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="process.php" method="post">
+                            <div class="">
+                                <h4>Account Login</h4>
+                                <p>Welcome back! Enter your details to login.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="username or email">Username or Phone Number</label>
+                                <input type="text" name="user_id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+
+                        </form>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Password" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-success" name="login">Submit</button>
-                </div>
-                <div class="mt-3">
-                    <p>Don't have an account? <a href="register.php">Register</a></p>
                 </div>
             </div>
-        </form>
+        </div>
     </main>
 </body>

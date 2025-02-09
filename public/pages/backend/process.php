@@ -34,6 +34,7 @@ if (isset($_POST['login'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+        $_SESSION['loggedin'] = $row;
         header("Location: dashboard.php");
     } else {
         echo "Email dosen't exist";
